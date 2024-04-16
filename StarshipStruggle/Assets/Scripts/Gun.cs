@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,17 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public Transform projectileSpawnPoint;
-    public GameObject projectile1;
-    public float projectileSpeed = 10;
 
-   
+    public GameObject projectile1;
+    public GameObject projectile2;
+
+    public float projectileSpeed = 10;
+    public float projectileSpeed2 = 5;
+
+    public float timeBetweenShot = 3;
+
+    private float lastShot;
+
 
     // Update is called once per frame
     void Update()
@@ -18,5 +26,15 @@ public class Gun : MonoBehaviour
             var projectile = Instantiate(projectile1, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
             projectile.GetComponent<Rigidbody2D>().velocity = projectileSpawnPoint.right * projectileSpeed;
         }
+
+
+       else if (Input.GetKeyDown(KeyCode.Keypad9) && Time.time > lastShot + timeBetweenShot)
+       {
+            var projectile = Instantiate(projectile2, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            projectile.GetComponent<Rigidbody2D>().velocity = projectileSpawnPoint.right * projectileSpeed2;
+            lastShot = Time.time;
+       }
+        
+      
     }
 }
