@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 804146654}
   - component: {fileID: 804146655}
   m_Layer: 0
-  m_Name: Square
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
