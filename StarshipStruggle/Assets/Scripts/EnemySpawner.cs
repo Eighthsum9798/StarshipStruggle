@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
             int randEnemy = Random.Range(0, enemies.Length);
             int randSpawn = Random.Range(0, spawnPoints.Length);
 
-            Instantiate(enemies[0], spawnPoints[randSpawn].position, transform.rotation);
+            Instantiate(enemies[randEnemy], spawnPoints[randSpawn].position, transform.rotation);
 
             
             lastSpawn = Time.time;
