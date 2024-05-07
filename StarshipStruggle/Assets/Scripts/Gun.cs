@@ -17,6 +17,11 @@ public class Gun : MonoBehaviour
 
     private float lastShot;
 
+    public AudioSource source;
+    public AudioClip machineGun;
+    public AudioClip cannon;
+
+
 
     // Update is called once per frame
     void Update()
@@ -25,6 +30,7 @@ public class Gun : MonoBehaviour
         {
             var projectile = Instantiate(projectile1, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
             projectile.GetComponent<Rigidbody2D>().velocity = projectileSpawnPoint.right * projectileSpeed;
+            source.PlayOneShot(machineGun);
         }
 
 
@@ -33,6 +39,7 @@ public class Gun : MonoBehaviour
             var projectile = Instantiate(projectile2, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
             projectile.GetComponent<Rigidbody2D>().velocity = projectileSpawnPoint.right * projectileSpeed2;
             lastShot = Time.time;
+            source.PlayOneShot(cannon);
        }
         
       

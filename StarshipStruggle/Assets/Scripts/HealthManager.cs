@@ -18,6 +18,9 @@ public class HealthManager : MonoBehaviour
 
     private bool isDead;
 
+    public AudioSource source;
+    public AudioClip damaged;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class HealthManager : MonoBehaviour
                 isDead = true;
                 manager.gameOver();
                 Debug.Log("dead");
+                Time.timeScale = 0f;
             }
         }
     }
@@ -54,6 +58,7 @@ public class HealthManager : MonoBehaviour
 
             Destroy(collision.gameObject);
             takeDamage(10);
+            source.PlayOneShot(damaged);
         }
     }
 

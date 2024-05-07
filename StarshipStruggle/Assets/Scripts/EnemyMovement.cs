@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public float life = 5;
+
+    void Awake()
+    {
+        Destroy(gameObject, life);
+    }
+
 
     public float speed = 5f;
     // Start is called before the first frame update
