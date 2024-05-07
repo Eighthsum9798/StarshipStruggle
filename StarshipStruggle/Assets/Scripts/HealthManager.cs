@@ -40,6 +40,7 @@ public class HealthManager : MonoBehaviour
             if (currentHealth <= 0 && !isDead)
             {
                 isDead = true;
+                Destroy(gameObject);
                 manager.gameOver();
                 Debug.Log("dead");
                 Time.timeScale = 0f;
