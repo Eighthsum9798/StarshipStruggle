@@ -5,23 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public GameObject gameOverUI;
+    public GameObject gameOverUI; //references game over ui canvas in level
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //method to call up game over ui
     public void gameOver() 
     {
-        gameOverUI.SetActive(true);
+        gameOverUI.SetActive(true); // sets gameover ui to active and shows on screen
     }
 
 }
