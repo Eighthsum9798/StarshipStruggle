@@ -46,7 +46,8 @@ public class HealthManager : MonoBehaviour
                 Debug.Log("dead");
                 Time.timeScale = 0f;
                 DestroyEnemiesWithTag("Enemy");
-
+                DestroyEnemiesWithTag("Projectile");
+                DestroyEnemiesWithTag("EProjectile");
             }
         }
     }
@@ -80,6 +81,18 @@ public class HealthManager : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             Destroy(enemy);
+        }
+
+        GameObject[] projectiles = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject projectile in projectiles)
+        {
+            Destroy(projectile);
+        }
+
+        GameObject[] EProjectiles = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject projectile in EProjectiles)
+        {
+            Destroy(projectile);
         }
     }
 
