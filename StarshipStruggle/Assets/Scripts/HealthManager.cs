@@ -20,6 +20,7 @@ public class HealthManager : MonoBehaviour
 
     public AudioSource source;
     public AudioClip damaged;
+    
 
 
     // Start is called before the first frame update
@@ -44,6 +45,8 @@ public class HealthManager : MonoBehaviour
                 manager.gameOver();
                 Debug.Log("dead");
                 Time.timeScale = 0f;
+                DestroyEnemiesWithTag("Enemy");
+
             }
         }
     }
@@ -53,7 +56,7 @@ public class HealthManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isColliding && collision.CompareTag("Enemy"))
+        if (!isColliding && collision.CompareTag("Enemy") || collision.CompareTag("EProjectile")) 
         {
             isColliding = true;
 
@@ -71,5 +74,14 @@ public class HealthManager : MonoBehaviour
 
     }
 
-    
+    void DestroyEnemiesWithTag(string tag)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+    }
+
+
 }
