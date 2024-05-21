@@ -39,9 +39,9 @@ public class EnemyShooting : MonoBehaviour
             var projectile = Instantiate(EnemyProjectile, enemyprojectilespawnpoint.position, enemyprojectilespawnpoint.rotation);
             // Set velocity of the projectile
             projectile.GetComponent<Rigidbody2D>().velocity = enemyprojectilespawnpoint.right * EProjectspeed;
-            
             // Record the time of the last shot
             lastEShot = Time.time;
+            
 
         }
     }
