@@ -190,7 +190,11 @@ MonoBehaviour:
   EProjectspeed: 10
   enemyprojectilespawnpoint: {fileID: 2032510086417843763}
   EnemyProjectile: {fileID: 2791452184738696612, guid: 7a55e7e096e4de04796f859e2248200b, type: 3}
+  timeBetweenEShot: 1
+  lastEShot: 0
   rand: 0
+  source: {fileID: 0}
+  shot: {fileID: 8300000, guid: 23ceca855952b054882dffa4fef2820e, type: 3}
 --- !u!1 &3423247815471045137
 GameObject:
   m_ObjectHideFlags: 0

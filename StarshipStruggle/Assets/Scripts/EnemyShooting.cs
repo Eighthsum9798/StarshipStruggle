@@ -18,6 +18,8 @@ public class EnemyShooting : MonoBehaviour
     // Random variable to determine when to shoot
     public float rand = 0f;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +39,10 @@ public class EnemyShooting : MonoBehaviour
             var projectile = Instantiate(EnemyProjectile, enemyprojectilespawnpoint.position, enemyprojectilespawnpoint.rotation);
             // Set velocity of the projectile
             projectile.GetComponent<Rigidbody2D>().velocity = enemyprojectilespawnpoint.right * EProjectspeed;
+            
             // Record the time of the last shot
             lastEShot = Time.time;
+
         }
     }
 }
